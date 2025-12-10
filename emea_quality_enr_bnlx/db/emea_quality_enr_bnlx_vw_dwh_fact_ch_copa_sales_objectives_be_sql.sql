@@ -1,0 +1,969 @@
+CREATE VIEW emea_quality_enr_bnlx.vw_dwh_fact_ch_copa_sales_objectives_be_sql (
+  `0accnt_asgn_1`,
+  `0billtoprty`,
+  `0bill_type`,
+  `0calmonth`,
+  `0calquart1`,
+  `0calyear`,
+  `0comp_code_2`,
+  `0coorder`,
+  `0country_2`,
+  `0co_area_1`,
+  `0cs_chart`,
+  `0cs_doctype`,
+  `0cs_item`,
+  `0curkey_gc`,
+  `0curkey_lc`,
+  `0curkey_tc`,
+  `0customer`,
+  `0doc_type`,
+  `0fiscper`,
+  `0fiscper3`,
+  `0fiscvarnt`,
+  `0fiscyear`,
+  `0gi_date`,
+  `0gl_account`,
+  `0material`,
+  `0matl_grp_1`,
+  `0pcompany`,
+  `0prod_hier`,
+  `0pstng_date`,
+  `0unit`,
+  `0version`,
+  `0vtype`,
+  dbg,
+  dctry_fd,
+  dpc,
+  drespl1,
+  drespo,
+  dru,
+  dsbe,
+  dvf,
+  d_msrca,
+  d_cs_grpa,
+  d_xdisco,
+  d_xgross,
+  d_xnetsal,
+  `0cust_sales`,
+  `0distr_chan`,
+  `0division`,
+  `0salesorg`,
+  `0accnt_asgn`,
+  `0plant`,
+  `0cs_dimen`,
+  ck_gross_sales_amt_act,
+  ck_net_sales_amt_act,
+  ck_discnt_amt_act,
+  rk_quantity,
+  ck_gross_sales_amt_pln,
+  ck_net_sales_amt_pln,
+  ck_discnt_amt_pln,
+  rk_quantity_pln,
+  rk_fc1_amount,
+  rk_fc2_amount,
+  rk_fc3_amount,
+  rk_fc1_quantity,
+  rk_fc2_quantity,
+  rk_fc3_quantity,
+  ck_disc_cash_act,
+  ck_disc_act,
+  ck_gross_qnty_act,
+  ck_rebates_act,
+  ck_rebates_other_act,
+  ck_returns_act,
+  ck_not_assigned_act,
+  ck_disc_cash_pln,
+  ck_disc_pln,
+  ck_gross_qnty_pln,
+  ck_rebates_pln,
+  ck_rebates_other_pln,
+  ck_returns_pln,
+  ck_not_assigned_pln,
+  ck_secondary_rebates_act,
+  ck_secondary_rebates_pln,
+  cluster,
+  channel,
+  organization,
+  objective_type,
+  date_1,
+  objective_eur,
+  `0division_edit`,
+  `0distr_chan_edit`,
+  `0country_billto`,
+  `0country___t_billto`,
+  `0postal_cd_billto`,
+  `0street_billto`,
+  `0city_billto`,
+  `0customer_billto`,
+  `0customer___t_billto`,
+  `0customer_billto_trim`,
+  `0currency`,
+  `0company`,
+  `0company___t`,
+  `0comp_code___t`,
+  dcgrp,
+  `0country_payer`,
+  `0country___t_payer`,
+  `0postal_cd_payer`,
+  `0street_payer`,
+  `0city_payer`,
+  `0customer_payer`,
+  `0customer___t_payer`,
+  `0customer_payer_trim`,
+  `0country_shipto`,
+  `0country___t_shipto`,
+  `0postal_cd_shipto`,
+  `0street_shipto`,
+  `0city_shipto`,
+  `0customer_shipto`,
+  `0customer___t_shipto`,
+  `0customer_shipto_trim`,
+  `0country_soldto`,
+  `0country___t_soldto`,
+  `0postal_cd_soldto`,
+  `0street_soldto`,
+  `0city_soldto`,
+  `0customer_soldto`,
+  `0customer___t_soldto`,
+  `0customer_soldto_trim`,
+  `0cust_sales___t`,
+  `0distr_chan___t`,
+  `0division___t`,
+  `0salesorg___t`,
+  `0cust_group`,
+  `0cust_group___t`,
+  `0cust_grp1`,
+  `0cust_grp2`,
+  `0cust_grp3`,
+  `0cust_grp4`,
+  `0cust_grp5`,
+  dcustgrp1,
+  dcustgrp1___t,
+  dcustgrp2,
+  dcustgrp2___t,
+  dcustgrp3,
+  dcustgrp3___t,
+  dcustgrp4,
+  dcustgrp4___t,
+  dcustgrp5,
+  dcustgrp5___t,
+  customer_country_code,
+  customer_status,
+  customer_employee_cwid,
+  customer_employee_name,
+  customer_main_sap_customer_code_1,
+  customer_sap_customer_name,
+  dctyspcod,
+  dctyspcod___t,
+  `0price_grp`,
+  `0material___t`,
+  `0matl_type`,
+  `0matl_type___t`,
+  `0base_uom`,
+  `0base_uom___t`,
+  dprodh1,
+  dprodh1___t,
+  dprodh2,
+  dprodh2___t,
+  dprodh3,
+  dprodh3___t,
+  dprodh4,
+  dprodh4___t,
+  dprodh5,
+  dprodh5___t,
+  dprodh6,
+  dprodh6___t,
+  dbrand,
+  dbrand___t,
+  division,
+  division___t,
+  dbrandf,
+  dbrandf___t,
+  `0prodh1`,
+  `0prodh6`,
+  `0prodh6___t`,
+  dan_cog,
+  dan_cog___t,
+  `0eanupc`,
+  d_fgps,
+  d_uvp,
+  `0del_flag`,
+  d_fgpsu,
+  d_cbpck,
+  d_cpckd,
+  d_pptyp,
+  d_trian,
+  d_prsite,
+  d_pasite,
+  dlp_form,
+  dlp_form__t,
+  d_lcpha,
+  `0extmatlgrp`,
+  d_gtin1,
+  d_gtin1c,
+  d_gtin1u,
+  d_gtin2,
+  d_gtin2c,
+  d_gtin2u,
+  `0matl_group`,
+  d_raube,
+  d_gtin1c___t,
+  d_gtin1u___t,
+  d_gtin2c___t,
+  d_gtin2u___t,
+  d_raube___t,
+  main_sap_material_code,
+  product_country_code,
+  product_status,
+  product_category,
+  product_brand_cluster,
+  product_brand,
+  product_sub_brand,
+  product_portfolio_management,
+  product_name,
+  product_cnk_material_code,
+  product_cnk_material_name,
+  product_iri_ean_code,
+  product_iri_material_name,
+  `0sapmaterial_code_trim`,
+  date,
+  yearmonth,
+  year,
+  date_text,
+  period_ytd_pytd,
+  period_ytd_pytd_full_month,
+  period_mtd_pmtd,
+  period_lfy_plfy,
+  rls_auth_sid)
+WITH SCHEMA BINDING
+AS SELECT 
+`0accnt_asgn_1`,
+  `0billtoprty`,
+  `0bill_type`,
+  `0calmonth`,
+  `0calquart1`,
+  `0calyear`,
+  `0comp_code_2`,
+  `0coorder`,
+  `0country_2`,
+  `0co_area_1`,
+  `0cs_chart`,
+  `0cs_doctype`,
+  `0cs_item`,
+  `0curkey_gc`,
+  `0curkey_lc`,
+  `0curkey_tc`,
+  `0customer`,
+  `0doc_type`,
+  `0fiscper`,
+  `0fiscper3`,
+  `0fiscvarnt`,
+  `0fiscyear`,
+  `0gi_date`,
+  `0gl_account`,
+  `0material`,
+  `0matl_grp_1`,
+  `0pcompany`,
+  `0prod_hier`,
+  `0pstng_date`,
+  `0unit`,
+  `0version`,
+  `0vtype`,
+  dbg,
+  dctry_fd,
+  dpc,
+  drespl1,
+  drespo,
+  dru,
+  dsbe,
+  dvf,
+  d_msrca,
+  d_cs_grpa,
+  d_xdisco,
+  d_xgross,
+  d_xnetsal,
+  `0cust_sales`,
+  `0distr_chan`,
+  `0division`,
+  `0salesorg`,
+  `0accnt_asgn`,
+  `0plant`,
+  `0cs_dimen`,
+  sum(ck_gross_sales_amt_act) as ck_gross_sales_amt_act,
+  sum(ck_net_sales_amt_act) as ck_net_sales_amt_act,
+  sum(ck_discnt_amt_act) as ck_discnt_amt_act,
+  sum(rk_quantity) as rk_quantity,
+  sum(ck_gross_sales_amt_pln) as ck_gross_sales_amt_pln,
+  sum(ck_net_sales_amt_pln) as ck_net_sales_amt_pln,
+  sum(ck_discnt_amt_pln) as ck_discnt_amt_pln,
+  sum(rk_quantity_pln) as rk_quantity_pln,
+  sum(rk_fc1_amount) as rk_fc1_amount,
+  sum(rk_fc2_amount) as rk_fc2_amount,
+  sum(rk_fc3_amount) as rk_fc3_amount,
+  sum(rk_fc1_quantity) as rk_fc1_quantity,
+  sum(rk_fc2_quantity) as rk_fc2_quantity,
+  sum(rk_fc3_quantity) as rk_fc3_quantity,
+  sum(ck_disc_cash_act) as ck_disc_cash_act,
+  sum(ck_disc_act) as ck_disc_act,
+  sum(ck_gross_qnty_act) as ck_gross_qnty_act,
+  sum(ck_rebates_act) as ck_rebates_act,
+  sum(ck_rebates_other_act) as ck_rebates_other_act,
+  sum(ck_returns_act) as ck_returns_act,
+  sum(ck_not_assigned_act) as ck_not_assigned_act,
+  sum(ck_disc_cash_pln) as ck_disc_cash_pln,
+  sum(ck_disc_pln) as ck_disc_pln,
+  sum(ck_gross_qnty_pln) as ck_gross_qnty_pln,
+  sum(ck_rebates_pln) as ck_rebates_pln,
+  sum(ck_rebates_other_pln) as ck_rebates_other_pln,
+  sum(ck_returns_pln) as ck_returns_pln,
+  sum(ck_not_assigned_pln) as ck_not_assigned_pln,
+  sum(ck_secondary_rebates_act) as ck_secondary_rebates_act,
+  sum(ck_secondary_rebates_pln) as ck_secondary_rebates_pln,
+  cluster,
+  channel,
+  organization,
+  objective_type,
+  date_1,
+  sum(objective_eur) as objective_eur,
+  `0division_edit`,
+  `0distr_chan_edit`,
+  `0country_billto`,
+  `0country___t_billto`,
+  `0postal_cd_billto`,
+  `0street_billto`,
+  `0city_billto`,
+  `0customer_billto`,
+  `0customer___t_billto`,
+  `0customer_billto_trim`,
+  `0currency`,
+  `0company`,
+  `0company___t`,
+  `0comp_code___t`,
+  dcgrp,
+  `0country_payer`,
+  `0country___t_payer`,
+  `0postal_cd_payer`,
+  `0street_payer`,
+  `0city_payer`,
+  `0customer_payer`,
+  `0customer___t_payer`,
+  `0customer_payer_trim`,
+  `0country_shipto`,
+  `0country___t_shipto`,
+  `0postal_cd_shipto`,
+  `0street_shipto`,
+  `0city_shipto`,
+  `0customer_shipto`,
+  `0customer___t_shipto`,
+  `0customer_shipto_trim`,
+  `0country_soldto`,
+  `0country___t_soldto`,
+  `0postal_cd_soldto`,
+  `0street_soldto`,
+  `0city_soldto`,
+  `0customer_soldto`,
+  `0customer___t_soldto`,
+  `0customer_soldto_trim`,
+  `0cust_sales___t`,
+  `0distr_chan___t`,
+  `0division___t`,
+  `0salesorg___t`,
+  `0cust_group`,
+  `0cust_group___t`,
+  `0cust_grp1`,
+  `0cust_grp2`,
+  `0cust_grp3`,
+  `0cust_grp4`,
+  `0cust_grp5`,
+  dcustgrp1,
+  dcustgrp1___t,
+  dcustgrp2,
+  dcustgrp2___t,
+  dcustgrp3,
+  dcustgrp3___t,
+  dcustgrp4,
+  dcustgrp4___t,
+  dcustgrp5,
+  dcustgrp5___t,
+  customer_country_code,
+  customer_status,
+  customer_employee_cwid,
+  customer_employee_name,
+  customer_main_sap_customer_code_1,
+  customer_sap_customer_name,
+  dctyspcod,
+  dctyspcod___t,
+  `0price_grp`,
+  `0material___t`,
+  `0matl_type`,
+  `0matl_type___t`,
+  `0base_uom`,
+  `0base_uom___t`,
+  dprodh1,
+  dprodh1___t,
+  dprodh2,
+  dprodh2___t,
+  dprodh3,
+  dprodh3___t,
+  dprodh4,
+  dprodh4___t,
+  dprodh5,
+  dprodh5___t,
+  dprodh6,
+  dprodh6___t,
+  dbrand,
+  dbrand___t,
+  division,
+  division___t,
+  dbrandf,
+  dbrandf___t,
+  `0prodh1`,
+  `0prodh6`,
+  `0prodh6___t`,
+  dan_cog,
+  dan_cog___t,
+  `0eanupc`,
+  d_fgps,
+  d_uvp,
+  `0del_flag`,
+  d_fgpsu,
+  d_cbpck,
+  d_cpckd,
+  d_pptyp,
+  d_trian,
+  d_prsite,
+  d_pasite,
+  dlp_form,
+  dlp_form__t,
+  d_lcpha,
+  `0extmatlgrp`,
+  d_gtin1,
+  d_gtin1c,
+  d_gtin1u,
+  d_gtin2,
+  d_gtin2c,
+  d_gtin2u,
+  `0matl_group`,
+  d_raube,
+  d_gtin1c___t,
+  d_gtin1u___t,
+  d_gtin2c___t,
+  d_gtin2u___t,
+  d_raube___t,
+  main_sap_material_code,
+  product_country_code,
+  product_status,
+  product_category,
+  product_brand_cluster,
+  product_brand,
+  product_sub_brand,
+  product_portfolio_management,
+  product_name,
+  product_cnk_material_code,
+  product_cnk_material_name,
+  product_iri_ean_code,
+  product_iri_material_name,
+  `0sapmaterial_code_trim`,
+  date,
+  yearmonth,
+  year,
+  date_text,
+   CASE 
+        WHEN YEAR(DATE) = YEAR(CURRENT_DATE) AND DATE < CURRENT_DATE
+        THEN 2 
+        WHEN YEAR(DATE) =YEAR(CURRENT_DATE - INTERVAL '1 year')  AND DATE < (CURRENT_DATE - INTERVAL '1 year')
+        THEN 1
+        ELSE 0 
+    END AS period_ytd_pytd,
+   CASE 
+        WHEN YEAR(DATE) = YEAR(CURRENT_DATE) AND DATE <= LAST_DAY(CURRENT_DATE - INTERVAL '1 month')
+        THEN 2 
+        WHEN YEAR(DATE) = (YEAR(CURRENT_DATE)  -1) AND DATE <= LAST_DAY((CURRENT_DATE - INTERVAL '1 year') - INTERVAL '1 month')
+        THEN 1
+        ELSE 0 
+    END as period_ytd_pytd_full_month,
+  CASE 
+        WHEN concat(year(DATE),month(DATE))= concat(year(CURRENT_DATE),month(CURRENT_DATE)) AND DATE < CURRENT_DATE
+        THEN 2
+        WHEN concat(year(DATE),month(DATE))= concat(year(CURRENT_DATE - INTERVAL '1 year'),month(CURRENT_DATE)) AND DATE < CURRENT_DATE - INTERVAL '1 year'
+        THEN 1
+        ELSE 0
+    END AS period_mtd_pmtd,
+  CASE 
+        WHEN YEAR(DATE) = (YEAR(CURRENT_DATE)  -1)
+        THEN 2
+        WHEN YEAR(DATE)  = (YEAR(CURRENT_DATE)  -2)
+        THEN 1
+        ELSE 0
+    END AS period_lfy_plfy,
+  rls_auth_sid
+   FROM 
+   (
+SELECT 
+a.0accnt_asgn as  0accnt_asgn_1
+,a.0billtoprty
+,a.0bill_type
+,a.0calmonth
+,a.0calquart1
+,a.0calyear
+,a.0comp_code as 0comp_code_2
+,a.0coorder
+,a.0country as 0country_2
+,a.0co_area as 0co_area_1
+,a.0cs_chart
+,a.0cs_doctype
+,a.0cs_item
+,a.0curkey_gc
+,a.0curkey_lc
+,a.0curkey_tc
+,a.0customer
+,a.0doc_type
+,a.0fiscper
+,a.0fiscper3
+,a.0fiscvarnt
+,a.0fiscyear
+,a.0gi_date
+,a.0gl_account
+,a.0material
+,a.0matl_grp_1
+,a.0pcompany
+,a.0prod_hier
+,a.0pstng_date
+,a.0unit
+,a.0version
+,a.0vtype
+,a.dbg
+,a.dctry_fd
+,a.dpc
+,a.drespl1
+,a.drespo
+,a.dru
+,a.dsbe
+,a.dvf
+,a.d_msrca
+,a.d_cs_grpa
+,a.d_xdisco
+,a.d_xgross
+,a.d_xnetsal
+,a.0cust_sales
+,a.0distr_chan
+,a.0division
+,a.0salesorg
+,a.0accnt_asgn
+,a.0plant
+,a.0cs_dimen
+,a.ck_gross_sales_amt_act
+,a.ck_net_sales_amt_act
+,a.ck_discnt_amt_act
+,a.rk_quantity
+,a.ck_gross_sales_amt_pln
+,a.ck_net_sales_amt_pln
+,a.ck_discnt_amt_pln
+,a.rk_quantity_pln
+,a.rk_fc1_amount
+,a.rk_fc2_amount
+,a.rk_fc3_amount
+,a.rk_fc1_quantity
+,a.rk_fc2_quantity
+,a.rk_fc3_quantity
+,a.ck_disc_cash_act
+,a.ck_disc_act
+,a.ck_gross_qnty_act
+,a.ck_rebates_act
+,a.ck_rebates_other_act
+,a.ck_returns_act
+,a.ck_not_assigned_act
+,a.ck_disc_cash_pln
+,a.ck_disc_pln
+,a.ck_gross_qnty_pln
+,a.ck_rebates_pln
+,a.ck_rebates_other_pln
+,a.ck_returns_pln
+,a.ck_not_assigned_pln
+,a.ck_secondary_rebates_act
+,a.ck_secondary_rebates_pln
+,a.cluster
+,a.channel
+,a.organization
+,a.objective_type
+,a.date as date_1
+,a.objective_eur
+,CASE 
+WHEN  a.0division = '00' 
+THEN a.0division
+ELSE '00' END AS 0division_edit,
+CASE 
+WHEN  a.0distr_chan = '00' 
+THEN a.0distr_chan
+ELSE '00'
+END
+AS 0distr_chan_edit,
+bt.0country_billto
+,bt.0country___t_billto
+,bt.0postal_cd_billto
+,bt.0street_billto
+,bt.0city_billto
+,bt.0customer_billto
+,bt.0customer___t_billto
+,bt.0customer_billto_trim
+,cc.0currency
+,cc.0company
+,cc.0company___t
+,cc.0comp_code___t
+,cc.dcgrp
+,p.0country_payer
+,p.0country___t_payer
+,p.0postal_cd_payer
+,p.0street_payer
+,p.0city_payer
+,p.0customer_payer
+,p.0customer___t_payer
+,p.0customer_payer_trim
+,st.0country_shipto
+,st.0country___t_shipto
+,st.0postal_cd_shipto
+,st.0street_shipto
+,st.0city_shipto
+,st.0customer_shipto
+,st.0customer___t_shipto
+,st.0customer_shipto_trim
+,s.0country_soldto
+,s.0country___t_soldto
+,s.0postal_cd_soldto
+,s.0street_soldto
+,s.0city_soldto
+,s.0customer_soldto
+,s.0customer___t_soldto
+,s.0customer_soldto_trim
+,ce.0cust_sales___t
+,ce.0distr_chan___t
+,ce.0division___t
+,ce.0salesorg___t
+,ce.0cust_group
+,ce.0cust_group___t
+,ce.0cust_grp1
+,ce.0cust_grp2
+,ce.0cust_grp3
+,ce.0cust_grp4
+,ce.0cust_grp5
+,ce.dcustgrp1
+,ce.dcustgrp1___t
+,ce.dcustgrp2
+,ce.dcustgrp2___t
+,ce.dcustgrp3
+,ce.dcustgrp3___t
+,ce.dcustgrp4
+,ce.dcustgrp4___t
+,ce.dcustgrp5
+,ce.dcustgrp5___t
+,ce.customer_country_code
+,ce.customer_status
+,ce.customer_employee_cwid
+,ce.customer_employee_name
+,ce.customer_main_sap_customer_code_1
+,ce.customer_sap_customer_name
+,ce.dctyspcod
+,ce.dctyspcod___t
+,ce.0price_grp
+,pe.0material___t
+,pe.0matl_type
+,pe.0matl_type___t
+,pe.0base_uom
+,pe.0base_uom___t
+,pe.dprodh1
+,pe.dprodh1___t
+,pe.dprodh2
+,pe.dprodh2___t
+,pe.dprodh3
+,pe.dprodh3___t
+,pe.dprodh4
+,pe.dprodh4___t
+,pe.dprodh5
+,pe.dprodh5___t
+,pe.dprodh6
+,pe.dprodh6___t
+,pe.dbrand
+,pe.dbrand___t
+,pe.division
+,pe.division___t
+,pe.dbrandf
+,pe.dbrandf___t
+,pe.0prodh1
+,pe.0prodh6
+,pe.0prodh6___t
+,pe.dan_cog
+,pe.dan_cog___t
+,pe.0eanupc
+,pe.d_fgps
+,pe.d_uvp
+,pe.0del_flag
+,pe.d_fgpsu
+,pe.d_cbpck
+,pe.d_cpckd
+,pe.d_pptyp
+,pe.d_trian
+,pe.d_prsite
+,pe.d_pasite
+,pe.dlp_form
+,pe.dlp_form__t
+,pe.d_lcpha
+,pe.0extmatlgrp
+,pe.d_gtin1
+,pe.d_gtin1c
+,pe.d_gtin1u
+,pe.d_gtin2
+,pe.d_gtin2c
+,pe.d_gtin2u
+,pe.0matl_group
+,pe.d_raube
+,pe.d_gtin1c___t
+,pe.d_gtin1u___t
+,pe.d_gtin2c___t
+,pe.d_gtin2u___t
+,pe.d_raube___t
+,pe.main_sap_material_code
+,pe.product_country_code
+,pe.product_status
+,pe.product_category
+,pe.product_brand_cluster
+,pe.product_brand
+,pe.product_sub_brand
+,pe.product_portfolio_management
+,pe.product_name
+,pe.product_cnk_material_code
+,pe.product_cnk_material_name
+,pe.product_iri_ean_code
+,pe.product_iri_material_name
+,pe.0sapmaterial_code_trim
+
+  ,CASE
+    WHEN 0CALDAY = '00000000' THEN TO_DATE(CONCAT(0CALMONTH, '01'), 'yyyyMMdd')
+    ELSE TO_DATE(0CALDAY, 'yyyyMMdd')
+  END AS DATE,
+TO_DATE(CONCAT(0CALMONTH, '01'), 'yyyyMMdd') AS YearMonth,
+  TO_DATE(CONCAT(0CALYEAR, '0101'), 'yyyyMMdd') AS Year,
+  CASE
+    WHEN 0CALDAY = '00000000' then CONCAT(0CALMONTH, '01')
+    ELSE 0CALDAY
+  END AS DATE_TEXT,
+    a.RLS_AUTH_SID
+FROM emea_quality_enr_bnlx.fact_prep_sap_ch_copa_sales_objectives_be a 
+LEFT JOIN emea_quality_enr_bnlx.dim_customer_p_001_billto bt on bt.0customer_billto=a.0billtoprty
+LEFT JOIN emea_quality_enr_bnlx.dim_comp_code_p_001 cc on cc.0comp_code=a.0comp_code
+LEFT JOIN emea_quality_enr_bnlx.dim_customer_p_001_payer p on p.0customer_payer=a.0payer
+LEFT JOIN emea_quality_enr_bnlx.dim_customer_p_001_shipto st on st.0customer_shipto=a.0ship_to
+LEFT JOIN emea_quality_enr_bnlx.dim_customer_p_001_soldto s on s.0customer_soldto=a.0sold_to
+LEFT JOIN emea_quality_enr_bnlx.dim_prepare_ch_customer_enrichment_dimension_be ce
+ on ce.0cust_sales_combined=a.0cust_code_trim
+ and ce.0distr_chan_comb=(CASE WHEN  a.0distr_chan = '00' THEN a.0distr_chan ELSE '00'END)
+ and ce.0division_comb=(CASE WHEN  a.0division = '00' THEN a.0division ELSE '00'END) 
+ and ce.0salesorg_comb=a.0salesorg
+ LEFT JOIN emea_quality_enr_bnlx.dim_prepare_ch_product_enrichment_dimension_be pe on pe.0sapmaterial_code_trim=a.0material_short
+LEFT JOIN emea_quality_enr_bnlx.dim_salesorg_p_001 so on so.0salesorg=a.0salesorg
+   ) 
+   GROUP BY 
+   `0accnt_asgn_1`,
+  `0billtoprty`,
+  `0bill_type`,
+  `0calmonth`,
+  `0calquart1`,
+  `0calyear`,
+  `0comp_code_2`,
+  `0coorder`,
+  `0country_2`,
+  `0co_area_1`,
+  `0cs_chart`,
+  `0cs_doctype`,
+  `0cs_item`,
+  `0curkey_gc`,
+  `0curkey_lc`,
+  `0curkey_tc`,
+  `0customer`,
+  `0doc_type`,
+  `0fiscper`,
+  `0fiscper3`,
+  `0fiscvarnt`,
+  `0fiscyear`,
+  `0gi_date`,
+  `0gl_account`,
+  `0material`,
+  `0matl_grp_1`,
+  `0pcompany`,
+  `0prod_hier`,
+  `0pstng_date`,
+  `0unit`,
+  `0version`,
+  `0vtype`,
+  dbg,
+  dctry_fd,
+  dpc,
+  drespl1,
+  drespo,
+  dru,
+  dsbe,
+  dvf,
+  d_msrca,
+  d_cs_grpa,
+  d_xdisco,
+  d_xgross,
+  d_xnetsal,
+  `0cust_sales`,
+  `0distr_chan`,
+  `0division`,
+  `0salesorg`,
+  `0accnt_asgn`,
+  `0plant`,
+  `0cs_dimen`,
+  cluster,
+  channel,
+  organization,
+  objective_type,
+  date_1,
+  `0division_edit`,
+  `0distr_chan_edit`,
+  `0country_billto`,
+  `0country___t_billto`,
+  `0postal_cd_billto`,
+  `0street_billto`,
+  `0city_billto`,
+  `0customer_billto`,
+  `0customer___t_billto`,
+  `0customer_billto_trim`,
+  `0currency`,
+  `0company`,
+  `0company___t`,
+  `0comp_code___t`,
+  dcgrp,
+  `0country_payer`,
+  `0country___t_payer`,
+  `0postal_cd_payer`,
+  `0street_payer`,
+  `0city_payer`,
+  `0customer_payer`,
+  `0customer___t_payer`,
+  `0customer_payer_trim`,
+  `0country_shipto`,
+  `0country___t_shipto`,
+  `0postal_cd_shipto`,
+  `0street_shipto`,
+  `0city_shipto`,
+  `0customer_shipto`,
+  `0customer___t_shipto`,
+  `0customer_shipto_trim`,
+  `0country_soldto`,
+  `0country___t_soldto`,
+  `0postal_cd_soldto`,
+  `0street_soldto`,
+  `0city_soldto`,
+  `0customer_soldto`,
+  `0customer___t_soldto`,
+  `0customer_soldto_trim`,
+  `0cust_sales___t`,
+  `0distr_chan___t`,
+  `0division___t`,
+  `0salesorg___t`,
+  `0cust_group`,
+  `0cust_group___t`,
+  `0cust_grp1`,
+  `0cust_grp2`,
+  `0cust_grp3`,
+  `0cust_grp4`,
+  `0cust_grp5`,
+  dcustgrp1,
+  dcustgrp1___t,
+  dcustgrp2,
+  dcustgrp2___t,
+  dcustgrp3,
+  dcustgrp3___t,
+  dcustgrp4,
+  dcustgrp4___t,
+  dcustgrp5,
+  dcustgrp5___t,
+  customer_country_code,
+  customer_status,
+  customer_employee_cwid,
+  customer_employee_name,
+  customer_main_sap_customer_code_1,
+  customer_sap_customer_name,
+  dctyspcod,
+  dctyspcod___t,
+  `0price_grp`,
+  `0material___t`,
+  `0matl_type`,
+  `0matl_type___t`,
+  `0base_uom`,
+  `0base_uom___t`,
+  dprodh1,
+  dprodh1___t,
+  dprodh2,
+  dprodh2___t,
+  dprodh3,
+  dprodh3___t,
+  dprodh4,
+  dprodh4___t,
+  dprodh5,
+  dprodh5___t,
+  dprodh6,
+  dprodh6___t,
+  dbrand,
+  dbrand___t,
+  division,
+  division___t,
+  dbrandf,
+  dbrandf___t,
+  `0prodh1`,
+  `0prodh6`,
+  `0prodh6___t`,
+  dan_cog,
+  dan_cog___t,
+  `0eanupc`,
+  d_fgps,
+  d_uvp,
+  `0del_flag`,
+  d_fgpsu,
+  d_cbpck,
+  d_cpckd,
+  d_pptyp,
+  d_trian,
+  d_prsite,
+  d_pasite,
+  dlp_form,
+  dlp_form__t,
+  d_lcpha,
+  `0extmatlgrp`,
+  d_gtin1,
+  d_gtin1c,
+  d_gtin1u,
+  d_gtin2,
+  d_gtin2c,
+  d_gtin2u,
+  `0matl_group`,
+  d_raube,
+  d_gtin1c___t,
+  d_gtin1u___t,
+  d_gtin2c___t,
+  d_gtin2u___t,
+  d_raube___t,
+  main_sap_material_code,
+  product_country_code,
+  product_status,
+  product_category,
+  product_brand_cluster,
+  product_brand,
+  product_sub_brand,
+  product_portfolio_management,
+  product_name,
+  product_cnk_material_code,
+  product_cnk_material_name,
+  product_iri_ean_code,
+  product_iri_material_name,
+  `0sapmaterial_code_trim`,
+  date,
+  yearmonth,
+  year,
+  date_text,
+  period_ytd_pytd,
+  period_ytd_pytd_full_month,
+  period_mtd_pmtd,
+  period_lfy_plfy,
+  rls_auth_sid
