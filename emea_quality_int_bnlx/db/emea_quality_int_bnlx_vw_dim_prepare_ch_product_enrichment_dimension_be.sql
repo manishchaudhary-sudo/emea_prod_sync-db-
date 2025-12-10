@@ -1,0 +1,98 @@
+CREATE VIEW emea_quality_int_bnlx.vw_dim_prepare_ch_product_enrichment_dimension_be (
+  `0material`,
+  `0material___t`,
+  `0matl_type`,
+  `0matl_type___t`,
+  `0base_uom`,
+  `0base_uom___t`,
+  dprodh1,
+  dprodh1___t,
+  dprodh2,
+  dprodh2___t,
+  dprodh3,
+  dprodh3___t,
+  dprodh4,
+  dprodh4___t,
+  dprodh5,
+  dprodh5___t,
+  dprodh6,
+  dprodh6___t,
+  dbrand,
+  dbrand___t,
+  division,
+  division___t,
+  dbrandf,
+  dbrandf___t,
+  `0prodh1`,
+  `0prodh6`,
+  `0prodh6___t`,
+  dan_cog,
+  dan_cog___t,
+  `0eanupc`,
+  d_fgps,
+  d_fgpsu,
+  d_cbpck,
+  d_cpckd,
+  d_pptyp,
+  d_trian,
+  d_prsite,
+  d_pasite,
+  dlp_form,
+  dlp_form__t,
+  d_lcpha,
+  `0extmatlgrp`,
+  d_gtin1,
+  d_gtin1c,
+  d_gtin1u,
+  d_gtin2,
+  d_gtin2c,
+  d_gtin2u,
+  `0matl_group`,
+  d_raube,
+  d_gtin1c___t,
+  d_gtin1u___t,
+  d_gtin2c___t,
+  d_gtin2u___t,
+  d_raube___t,
+  d_uvp,
+  `0del_flag`,
+  product_country_code,
+  product_status,
+  product_category,
+  product_brand_cluster,
+  product_brand,
+  product_sub_brand,
+  product_portfolio_management,
+  product_name,
+  main_sap_material_code,
+  product_cnk_material_code,
+  product_cnk_material_name,
+  product_iri_material_name,
+  `0sapmaterial_code_trim`,
+  product_iri_ean_code)
+WITH SCHEMA BINDING
+AS (
+Select mat.0material,mat.0material___t,mat.0matl_type,mat.0matl_type___t,mat.0base_uom,mat.0base_uom___t,mat.dprodh1,mat.dprodh1___t,mat.dprodh2,
+mat.dprodh2___t,mat.dprodh3,mat.dprodh3___t,mat.dprodh4,mat.dprodh4___t,mat.dprodh5,mat.dprodh5___t,mat.dprodh6,mat.dprodh6___t,mat.dbrand,mat.dbrand___t,
+mat.division,mat.division___t,mat.dbrandf,mat.dbrandf___t,mat.0prodh1,mat.0prodh6,mat.0prodh6___t,mat.dan_cog,mat.dan_cog___t,mat.0eanupc,mat.d_fgps,mat.d_fgpsu,
+mat.d_cbpck,mat.d_cpckd,mat.d_pptyp,mat.d_trian,mat.d_prsite,mat.d_pasite,mat.dlp_form,mat.dlp_form__t,mat.d_lcpha,mat.0extmatlgrp,mat.d_gtin1,
+mat.d_gtin1c,mat.d_gtin1u,mat.d_gtin2,mat.d_gtin2c,mat.d_gtin2u,mat.0matl_group,mat.d_raube,mat.d_gtin1c___t,mat.d_gtin1u___t,mat.d_gtin2c___t,mat.d_gtin2u___t,
+mat.d_raube___t,mat.d_uvp,mat.0del_flag,
+pro.country_code AS product_country_code,pro.status AS product_status,pro.category AS product_category,pro.brand_cluster AS product_brand_cluster,pro.brand AS product_brand,pro.sub_brand AS product_sub_brand,pro.portfolio_management AS product_portfolio_management,pro.product_name,pro.main_sap_material_code,pro.cnk_material_code AS product_cnk_material_code,pro.cnk_material_name AS product_cnk_material_name ,pro.iri_material_name AS product_iri_material_name
+ ,ltrim(0,(coalesce(mat.0material_trim , Pro.sap_material_code))) AS 0sapmaterial_code_trim 
+,pro.iri_ean_code AS product_iri_ean_code
+
+FROM
+  (
+    
+  Select 0material,0material___t,0matl_type,0matl_type___t,0base_uom,0base_uom___t,dprodh1,dprodh1___t,dprodh2,dprodh2___t,dprodh3,dprodh3___t,dprodh4,dprodh4___t,dprodh5,dprodh5___t,dprodh6,dprodh6___t,dbrand,dbrand___t,division,division___t,dbrandf,dbrandf___t,0prodh1,0prodh6,0prodh6___t,dan_cog,dan_cog___t,0eanupc,d_fgps,d_fgpsu,
+  d_cbpck,d_cpckd,d_pptyp,d_trian,d_prsite,d_pasite,dlp_form,dlp_form__t,d_lcpha,0extmatlgrp,d_gtin1,d_gtin1c,d_gtin1u,d_gtin2,d_gtin2c,d_gtin2u,0matl_group,d_raube,d_gtin1c___t,d_gtin1u___t,d_gtin2c___t,d_gtin2u___t,d_raube___t,d_uvp,0del_flag,0material_trim from emea_quality_int_bnlx.dim_material_p_001 where dprodh1='16'
+  ) mat
+  full outer join
+  (
+    
+    Select d_product_mapping_code,country_code,status,category,brand_cluster,brand,sub_brand,portfolio_management,product_name,main_sap_material_code,sap_material_code,cnk_material_code,cnk_material_name ,iri_material_name,update_date,update_by,extract_date,extract_by,iri_ean_code,sap_material_name 
+    from emea_quality_int_bnlx.man_ch_product_mapping where country_code='BE'
+  ) pro on mat.0material_trim=Pro.sap_material_code
+
+)
