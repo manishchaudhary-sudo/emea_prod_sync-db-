@@ -1,0 +1,39 @@
+CREATE VIEW emea_raw_src_bnlx.fico_dim_company_code (
+  COMPANY_CODE_SID,
+  COMPANY_CODE_ID COMMENT 'Company Code ID',
+  COMPANY_CODE COMMENT 'Company Code',
+  COMPANY_ID COMMENT 'Company ID',
+  COMPANY COMMENT 'Company',
+  COUNTRY_ID COMMENT 'Country ID',
+  COMPANY_CODE_CUR COMMENT 'Company Code Currency',
+  COMPANY_CONS_UNIT_ID COMMENT 'Company Consolidation Unit ID',
+  COMPANY_CONS_UNIT COMMENT 'Company Consolidation Unit',
+  COMPANY_AB_STATUS_ID COMMENT 'Company AB Status ID',
+  COMPANY_AB_STATUS COMMENT 'Company AB Status',
+  COMPANY_SUPPLY_CHAIN_ROLE_ID COMMENT 'Company Supply Chain Role ID',
+  COMPANY_SUPPLY_CHAIN_ROLE COMMENT 'Company Supply Chain Role',
+  COUNTRY_GROUP_ID COMMENT 'Country Group ID',
+  OPSYS COMMENT 'OPSYS',
+  OPTIME COMMENT 'OPTIME',
+  OPTYPE COMMENT 'OPTYPE')
+WITH SCHEMA COMPENSATION
+AS SELECT
+        COMPANY_CODE_SID,
+        COMPANY_CODE_ID,
+        COMPANY_CODE,
+        COMPANY_ID,
+        COMPANY,
+        COUNTRY_ID,
+        COMPANY_CODE_CUR,
+        COMPANY_CONS_UNIT_ID,
+        COMPANY_CONS_UNIT,
+        COMPANY_AB_STATUS_ID,
+        COMPANY_AB_STATUS,
+        COMPANY_SUPPLY_CHAIN_ROLE_ID,
+        COMPANY_SUPPLY_CHAIN_ROLE,
+        COUNTRY_GROUP_ID,
+        OPSYS,
+        OPTIME,
+        OPTYPE
+    FROM
+        chdaa_prd_cda_fico.fico_consume.dim_company_code

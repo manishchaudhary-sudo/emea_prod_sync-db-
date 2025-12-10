@@ -1,0 +1,43 @@
+CREATE VIEW emea_raw_src_bnlx.fico_dim_bill_to (
+  BILL_TO_SID,
+  BILL_TO_ID COMMENT 'Customer ID',
+  BILL_TO COMMENT 'Customer',
+  BILL_TO_CH_ID_01 COMMENT 'Customer Channel ID 1',
+  BILL_TO_CH_ID_02 COMMENT 'Customer Channel ID 2',
+  BILL_TO_CH_01 COMMENT 'Customer Channel 1',
+  BILL_TO_CH_02 COMMENT 'Customer Channel 2',
+  BILL_TO_INDUSTRY_ID COMMENT 'Customer Industry ID',
+  BILL_TO_INDUSTRY COMMENT 'Customer Industry',
+  BILL_TO_REGION_ID COMMENT 'Customer Region ID',
+  BILL_TO_REGION COMMENT 'Customer Region',
+  BILL_TO_COUNTRY_ID COMMENT 'Customer Country ID',
+  BILL_TO_COUNTRY COMMENT 'Customer Country',
+  BILL_TO_CITY COMMENT 'Customer City',
+  BILL_TO_STREET COMMENT 'Customer Street',
+  BILL_TO_POSTAL_CODE COMMENT 'Customer Postal Code',
+  OPSYS COMMENT 'OPSYS',
+  OPTIME COMMENT 'OPTIME',
+  OPTYPE COMMENT 'OPTYPE')
+WITH SCHEMA COMPENSATION
+AS SELECT
+        BILL_TO_SID,
+        BILL_TO_ID,
+        BILL_TO,
+        BILL_TO_CH_ID_01,
+        BILL_TO_CH_ID_02,
+        BILL_TO_CH_01,
+        BILL_TO_CH_02,
+        BILL_TO_INDUSTRY_ID,
+        BILL_TO_INDUSTRY,
+        BILL_TO_REGION_ID,
+        BILL_TO_REGION,
+        BILL_TO_COUNTRY_ID,
+        BILL_TO_COUNTRY,
+        BILL_TO_CITY,
+        BILL_TO_STREET,
+        BILL_TO_POSTAL_CODE,
+        OPSYS,
+        OPTIME,
+        OPTYPE
+    FROM
+        chdaa_prd_cda_fico.fico_consume.dim_bill_to

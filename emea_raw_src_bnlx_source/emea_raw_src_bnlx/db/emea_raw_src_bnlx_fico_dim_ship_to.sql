@@ -1,0 +1,43 @@
+CREATE VIEW emea_raw_src_bnlx.fico_dim_ship_to (
+  SHIP_TO_SID,
+  SHIP_TO_ID COMMENT 'Customer ID',
+  SHIP_TO COMMENT 'Customer',
+  SHIP_TO_CH_ID_01 COMMENT 'Customer Channel ID 1',
+  SHIP_TO_CH_ID_02 COMMENT 'Customer Channel ID 2',
+  SHIP_TO_CH_01 COMMENT 'Customer Channel 1',
+  SHIP_TO_CH_02 COMMENT 'Customer Channel 2',
+  SHIP_TO_INDUSTRY_ID COMMENT 'Customer Industry ID',
+  SHIP_TO_INDUSTRY COMMENT 'Customer Industry',
+  SHIP_TO_REGION_ID COMMENT 'Customer Region ID',
+  SHIP_TO_REGION COMMENT 'Customer Region',
+  SHIP_TO_COUNTRY_ID COMMENT 'Customer Country ID',
+  SHIP_TO_COUNTRY COMMENT 'Customer Country',
+  SHIP_TO_CITY COMMENT 'Customer City',
+  SHIP_TO_STREET COMMENT 'Customer Street',
+  SHIP_TO_POSTAL_CODE COMMENT 'Customer Postal Code',
+  OPSYS COMMENT 'OPSYS',
+  OPTIME COMMENT 'OPTIME',
+  OPTYPE COMMENT 'OPTYPE')
+WITH SCHEMA COMPENSATION
+AS SELECT
+        SHIP_TO_SID,
+        SHIP_TO_ID,
+        SHIP_TO,
+        SHIP_TO_CH_ID_01,
+        SHIP_TO_CH_ID_02,
+        SHIP_TO_CH_01,
+        SHIP_TO_CH_02,
+        SHIP_TO_INDUSTRY_ID,
+        SHIP_TO_INDUSTRY,
+        SHIP_TO_REGION_ID,
+        SHIP_TO_REGION,
+        SHIP_TO_COUNTRY_ID,
+        SHIP_TO_COUNTRY,
+        SHIP_TO_CITY,
+        SHIP_TO_STREET,
+        SHIP_TO_POSTAL_CODE,
+        OPSYS,
+        OPTIME,
+        OPTYPE
+    FROM
+        chdaa_prd_cda_fico.fico_consume.dim_ship_to

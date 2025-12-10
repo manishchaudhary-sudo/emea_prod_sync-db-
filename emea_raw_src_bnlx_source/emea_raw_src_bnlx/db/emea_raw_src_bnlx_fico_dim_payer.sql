@@ -1,0 +1,43 @@
+CREATE VIEW emea_raw_src_bnlx.fico_dim_payer (
+  PAYER_SID,
+  PAYER_ID COMMENT 'Customer ID',
+  PAYER COMMENT 'Customer',
+  PAYER_CH_ID_01 COMMENT 'Customer Channel ID 1',
+  PAYER_CH_ID_02 COMMENT 'Customer Channel ID 2',
+  PAYER_CH_01 COMMENT 'Customer Channel 1',
+  PAYER_CH_02 COMMENT 'Customer Channel 2',
+  PAYER_INDUSTRY_ID COMMENT 'Customer Industry ID',
+  PAYER_INDUSTRY COMMENT 'Customer Industry',
+  PAYER_REGION_ID COMMENT 'Customer Region ID',
+  PAYER_REGION COMMENT 'Customer Region',
+  PAYER_COUNTRY_ID COMMENT 'Customer Country ID',
+  PAYER_COUNTRY COMMENT 'Customer Country',
+  PAYER_CITY COMMENT 'Customer City',
+  PAYER_STREET COMMENT 'Customer Street',
+  PAYER_POSTAL_CODE COMMENT 'Customer Postal Code',
+  OPSYS COMMENT 'OPSYS',
+  OPTIME COMMENT 'OPTIME',
+  OPTYPE COMMENT 'OPTYPE')
+WITH SCHEMA COMPENSATION
+AS SELECT
+        PAYER_SID,
+        PAYER_ID,
+        PAYER,
+        PAYER_CH_ID_01,
+        PAYER_CH_ID_02,
+        PAYER_CH_01,
+        PAYER_CH_02,
+        PAYER_INDUSTRY_ID,
+        PAYER_INDUSTRY,
+        PAYER_REGION_ID,
+        PAYER_REGION,
+        PAYER_COUNTRY_ID,
+        PAYER_COUNTRY,
+        PAYER_CITY,
+        PAYER_STREET,
+        PAYER_POSTAL_CODE,
+        OPSYS,
+        OPTIME,
+        OPTYPE
+    FROM
+        chdaa_prd_cda_fico.fico_consume.dim_payer

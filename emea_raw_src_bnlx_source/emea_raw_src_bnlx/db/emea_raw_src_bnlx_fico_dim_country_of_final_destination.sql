@@ -1,0 +1,43 @@
+CREATE VIEW emea_raw_src_bnlx.fico_dim_country_of_final_destination (
+  COUNTRY_FD_SID,
+  COUNTRY_FD_ID COMMENT 'Country ID',
+  COUNTRY_FD COMMENT 'Country',
+  COUNTRY_FD_HL_ID_01 COMMENT 'Country Hierarchy Level ID 1',
+  COUNTRY_FD_HL_ID_02 COMMENT 'Country Hierarchy Level ID 2',
+  COUNTRY_FD_HL_ID_03 COMMENT 'Country Hierarchy Level ID 3',
+  COUNTRY_FD_HL_ID_04 COMMENT 'Country Hierarchy Level ID 4',
+  COUNTRY_FD_HL_ID_05 COMMENT 'Country Hierarchy Level ID 5',
+  COUNTRY_FD_HL_ID_06 COMMENT 'Country Hierarchy Level ID 6',
+  COUNTRY_FD_HL_01 COMMENT 'Country Hierarchy Level 1',
+  COUNTRY_FD_HL_02 COMMENT 'Country Hierarchy Level 2',
+  COUNTRY_FD_HL_03 COMMENT 'Country Hierarchy Level 3',
+  COUNTRY_FD_HL_04 COMMENT 'Country Hierarchy Level 4',
+  COUNTRY_FD_HL_05 COMMENT 'Country Hierarchy Level 5',
+  COUNTRY_FD_HL_06 COMMENT 'Country Hierarchy Level 6',
+  COUNTRY_FD_CURRENCY_ID COMMENT 'Country Currency ID',
+  OPSYS COMMENT 'OPSYS',
+  OPTIME COMMENT 'OPTIME',
+  OPTYPE COMMENT 'OPTYPE')
+WITH SCHEMA COMPENSATION
+AS SELECT
+        COUNTRY_FD_SID,
+        COUNTRY_FD_ID,
+        COUNTRY_FD,
+        COUNTRY_FD_HL_ID_01,
+        COUNTRY_FD_HL_ID_02,
+        COUNTRY_FD_HL_ID_03,
+        COUNTRY_FD_HL_ID_04,
+        COUNTRY_FD_HL_ID_05,
+        COUNTRY_FD_HL_ID_06,
+        COUNTRY_FD_HL_01,
+        COUNTRY_FD_HL_02,
+        COUNTRY_FD_HL_03,
+        COUNTRY_FD_HL_04,
+        COUNTRY_FD_HL_05,
+        COUNTRY_FD_HL_06,
+        COUNTRY_FD_CURRENCY_ID,
+        OPSYS,
+        OPTIME,
+        OPTYPE
+    FROM
+        chdaa_prd_cda_fico.fico_consume.dim_country_of_final_destination
