@@ -1,0 +1,36 @@
+CREATE TABLE chdaa_prd_lz_emea.emea_quality_corr_bnlx.fico_dim_date (
+  ETLLastModifiedDate TIMESTAMP,
+  ETLIsDeleted BOOLEAN,
+  day_name_short STRING,
+  date DATE,
+  day_of_week_iso INT,
+  date_id STRING,
+  optime STRING,
+  quarter_name STRING,
+  day_of_week_sun INT,
+  quarter_of_year_name STRING,
+  year INT,
+  month_name_short STRING,
+  quarter_of_year INT,
+  month_of_year INT,
+  opsys STRING,
+  day_of_month INT,
+  day_name STRING,
+  quarter INT,
+  date_sid INT,
+  week_iso INT,
+  month INT,
+  month_of_year_name STRING,
+  month_name STRING,
+  optype STRING,
+  ETLLineageID STRING,
+  ETLChecksum STRING)
+USING delta
+LOCATION 'abfss://quality@zpdatacoresadpemea.dfs.core.windows.net/correction/bnlx/fico_dim_date'
+TBLPROPERTIES (
+  'delta.deletedFileRetentionDuration' = 'interval 0 days',
+  'delta.enableDeletionVectors' = 'true',
+  'delta.feature.deletionVectors' = 'supported',
+  'delta.logRetentionDuration' = 'interval 0 days',
+  'delta.minReaderVersion' = '3',
+  'delta.minWriterVersion' = '7')

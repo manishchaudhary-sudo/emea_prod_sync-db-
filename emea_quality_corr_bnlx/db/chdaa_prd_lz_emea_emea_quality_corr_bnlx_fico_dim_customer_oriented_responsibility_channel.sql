@@ -1,0 +1,38 @@
+CREATE TABLE chdaa_prd_lz_emea.emea_quality_corr_bnlx.fico_dim_customer_oriented_responsibility_channel (
+  ETLChecksum STRING,
+  ETLIsDeleted BOOLEAN,
+  ETLLastModifiedDate TIMESTAMP,
+  corec_sid STRING,
+  plant_id STRING,
+  cust_chan_local_hl_id_01_type STRING,
+  distr_chan_id STRING,
+  cust_chan_local_hl_02 STRING,
+  cust_chan_local_hl_id_01 STRING,
+  optime STRING,
+  country_fd_id STRING,
+  cs_item_id STRING,
+  division_id STRING,
+  dcorec_id STRING,
+  sales_org_id STRING,
+  cust_chan_local_hl_03 STRING,
+  cs_chart_id STRING,
+  pc_id STRING,
+  material_id STRING,
+  cust_chan_local_hl_01 STRING,
+  cust_chan_local_hl_id_02 STRING,
+  cust_chan_local_hl_id_03 STRING,
+  cust_chan_local_hl_id_03_type STRING,
+  opsys STRING,
+  cust_id STRING,
+  cust_chan_local_hl_id_02_type STRING,
+  optype STRING,
+  ETLLineageID STRING)
+USING delta
+LOCATION 'abfss://quality@zpdatacoresadpemea.dfs.core.windows.net/correction/bnlx/fico_dim_customer_oriented_responsibility_channel'
+TBLPROPERTIES (
+  'delta.deletedFileRetentionDuration' = 'interval 0 days',
+  'delta.enableDeletionVectors' = 'true',
+  'delta.feature.deletionVectors' = 'supported',
+  'delta.logRetentionDuration' = 'interval 0 days',
+  'delta.minReaderVersion' = '3',
+  'delta.minWriterVersion' = '7')
