@@ -1,0 +1,28 @@
+CREATE VIEW emea_consume_bnlx.ch_product_mapping_be_live_edit (
+  ETLChecksum,
+  ETLLineageID,
+  ETLIsDeleted,
+  ETLLastModifiedDate,
+  cnk_material_code,
+  d_product_mapping_code,
+  update_by,
+  sub_brand,
+  portfolio_management,
+  dummy_measure,
+  extract_by,
+  iri_material_name,
+  status,
+  brand_cluster,
+  product_name,
+  sap_material_name,
+  main_sap_material_code,
+  country_code,
+  update_date,
+  brand,
+  sap_material_code,
+  iri_ean_code,
+  cnk_material_name,
+  category,
+  extract_date)
+WITH SCHEMA BINDING
+AS (SELECT * FROM emea_curated_disc_bnlx.ch_product_mapping_be_live_edit)

@@ -1,0 +1,27 @@
+CREATE VIEW emea_consume_bnlx.ch_customer_mapping_nl_live_edit (
+  ETLChecksum,
+  ETLLastModifiedDate,
+  ETLIsDeleted,
+  employee_cwid,
+  sap_customer_country,
+  ETLLineageID,
+  sap_customer_zip_code,
+  cluster,
+  employee_name,
+  update_by,
+  sap_customer_city,
+  d_customer_mapping_code,
+  main_sap_customer_code,
+  extract_by,
+  sap_customer_code,
+  status,
+  sap_customer_name,
+  country_code,
+  sap_apb_code,
+  update_date,
+  dummy,
+  organization,
+  channel,
+  extract_date)
+WITH SCHEMA BINDING
+AS (SELECT * FROM emea_curated_disc_bnlx.ch_customer_mapping_nl_live_edit)
