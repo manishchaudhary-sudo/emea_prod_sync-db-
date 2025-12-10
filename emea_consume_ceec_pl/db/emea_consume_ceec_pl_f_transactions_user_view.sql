@@ -1,0 +1,424 @@
+CREATE VIEW emea_consume_ceec_pl.f_transactions_user_view (
+  DATA_DELIVERY_DATE,
+  KPI,
+  Kamsoft_program_name,
+  Kamsoft_program_ID,
+  Date_purchase,
+  Expiry_date,
+  Batch_number,
+  Distributor,
+  Sales_type,
+  Document_ID,
+  Order_ID,
+  Sales_time,
+  Purchase_type,
+  Date_distributor_sales,
+  Discount_packet,
+  Date_start_discount_packet,
+  Date_end_discount_packet,
+  Date_order_forward,
+  Chain_order_ID,
+  Chain_Customer_name,
+  Order_status,
+  Rep_comments,
+  Distributor_comments,
+  Internal_comments,
+  Product_objections,
+  Additional_info,
+  TRANSACTION_SOURCE,
+  transaction_time_time_id,
+  transaction_customer_customer_id,
+  TRANSACTION_CUSTOMER_BK,
+  transaction_product_product_id,
+  TRANSACTION_PRODUCT_BK,
+  PSDT_AKT_SYNCH,
+  Volume,
+  sell_in_volume_before_correction,
+  Discount_percentage,
+  ExFactory_price,
+  Estimated_compensation_value,
+  Estimated_order_value_exfactory_price,
+  Estimated_order_value_ex_factory_price_after_compensation,
+  Date_corrected,
+  adress,
+  area_commercial,
+  area_education,
+  attributes,
+  behind_counter_exposition,
+  behind_glass_exposition,
+  chain_customer_account,
+  chain_type,
+  city,
+  commercial_segment,
+  contract,
+  customer_bk,
+  customer_change_timestamp,
+  customer_group,
+  customer_id,
+  customer_is_valid,
+  customer_lad,
+  customer_source,
+  customer_valid_from,
+  customer_valid_to,
+  dnv_commercial,
+  dnv_education,
+  education_segment,
+  email,
+  external_source,
+  group_owner,
+  group_type,
+  id_acres,
+  id_chain_customer,
+  id_customer,
+  id_esalesweb,
+  id_external_reporting,
+  id_farmaprom,
+  importance,
+  iqvia_brick,
+  is_dermatological,
+  is_kamsoft,
+  is_ordering,
+  is_self_service,
+  kamsoft_agreement,
+  last_visit_commercial,
+  last_visit_education,
+  name_chain_customer,
+  nip,
+  pharmacy_name,
+  pharmacy_status,
+  pharmacy_type,
+  phone_number,
+  position,
+  rep_id_commercial,
+  rep_id_education,
+  rep_name_commercial,
+  rep_name_education,
+  store_window,
+  zip_code,
+  active_substance_dosage,
+  aktualnosc,
+  attribute,
+  bazyl,
+  bloz7,
+  brand,
+  brand_group,
+  category,
+  ean,
+  fct_tool_name,
+  form,
+  is_commercial,
+  is_contracted,
+  is_massmarket,
+  is_msl_list,
+  key_words,
+  nr_pozwolenia,
+  pkwiu,
+  product_bk,
+  product_id,
+  product_is_valid,
+  product_type,
+  product_valid_from,
+  product_valid_to,
+  sap_id,
+  sap_name,
+  sku_name,
+  sku_short_name,
+  status,
+  unit_of_measurement,
+  units_volume,
+  vat,
+  product_source,
+  cur_adress,
+  cur_area_commercial,
+  cur_area_education,
+  cur_attributes,
+  cur_behind_counter_exposition,
+  cur_behind_glass_exposition,
+  cur_chain_customer_account,
+  cur_chain_type,
+  cur_city,
+  cur_commercial_segment,
+  cur_contract,
+  cur_customer_bk,
+  cur_customer_change_timestamp,
+  cur_customer_group,
+  cur_customer_id,
+  cur_customer_is_valid,
+  cur_customer_lad,
+  cur_customer_source,
+  cur_customer_valid_from,
+  cur_customer_valid_to,
+  cur_dnv_commercial,
+  cur_dnv_education,
+  cur_education_segment,
+  cur_email,
+  cur_external_source,
+  cur_group_owner,
+  cur_group_type,
+  cur_id_acres,
+  cur_id_chain_customer,
+  cur_id_customer,
+  cur_id_esalesweb,
+  cur_id_external_reporting,
+  cur_id_farmaprom,
+  cur_importance,
+  cur_iqvia_brick,
+  cur_is_dermatological,
+  cur_is_kamsoft,
+  cur_is_ordering,
+  cur_is_self_service,
+  cur_kamsoft_agreement,
+  cur_last_visit_commercial,
+  cur_last_visit_education,
+  cur_name_chain_customer,
+  cur_nip,
+  cur_pharmacy_name,
+  cur_pharmacy_status,
+  cur_pharmacy_type,
+  cur_phone_number,
+  cur_position,
+  cur_rep_id_commercial,
+  cur_rep_id_education,
+  cur_rep_name_commercial,
+  cur_rep_name_education,
+  cur_store_window,
+  cur_zip_code,
+  rep_email_commercial,
+  rep_email_commercial_2,
+  time_id,
+  year,
+  quarter,
+  month,
+  week_of_year,
+  day_of_year,
+  day_of_month,
+  day_of_week,
+  year_quarter,
+  year_month,
+  f_transaction_key,
+  ETLLastModifiedDate)
+WITH SCHEMA COMPENSATION
+AS (
+select 
+DATA_DELIVERY_DATE
+,KPI
+,Kamsoft_program_name
+,Kamsoft_program_ID
+,Date_purchase
+,Expiry_date
+,Batch_number
+,Distributor
+,Sales_type
+,Document_ID
+,Order_ID
+,Sales_time
+,Purchase_type
+,Date_distributor_sales
+,Discount_packet
+,Date_start_discount_packet
+,Date_end_discount_packet
+,Date_order_forward
+,Chain_order_ID
+,Chain_Customer_name
+,Order_status
+,Rep_comments
+,Distributor_comments
+,Internal_comments
+,Product_objections
+,Additional_info
+,TRANSACTION_SOURCE
+,transaction_time_time_id
+,transaction_customer_customer_id
+,TRANSACTION_CUSTOMER_BK
+,transaction_product_product_id
+,TRANSACTION_PRODUCT_BK
+,PSDT_AKT_SYNCH
+,Volume
+,sell_in_volume_before_correction
+,Discount_percentage
+,ExFactory_price
+,Estimated_compensation_value
+,Estimated_order_value_exfactory_price
+,Estimated_order_value_ex_factory_price_after_compensation
+,Date_corrected
+,adress
+,area_commercial
+,area_education
+,attributes
+,behind_counter_exposition
+,behind_glass_exposition
+,chain_customer_account
+,chain_type
+,city
+,commercial_segment
+,contract
+,customer_bk
+,customer_change_timestamp
+,customer_group
+,customer_id
+,customer_is_valid
+,customer_lad
+,customer_source
+,customer_valid_from
+,customer_valid_to
+,dnv_commercial
+,dnv_education
+,education_segment
+,email
+,external_source
+,group_owner
+,group_type
+,id_acres
+,id_chain_customer
+,id_customer
+,id_esalesweb
+,id_external_reporting
+,id_farmaprom
+,importance
+,iqvia_brick
+,is_dermatological
+,is_kamsoft
+,is_ordering
+,is_self_service
+,kamsoft_agreement
+,last_visit_commercial
+,last_visit_education
+,name_chain_customer
+,nip
+,pharmacy_name
+,pharmacy_status
+,pharmacy_type
+,phone_number
+,position
+,rep_id_commercial
+,rep_id_education
+,rep_name_commercial
+,rep_name_education
+,store_window
+,zip_code
+,active_substance_dosage
+,aktualnosc
+,attribute
+,bazyl
+,bloz7
+,brand
+,brand_group
+,category
+,ean
+,fct_tool_name
+,form
+,is_commercial
+,is_contracted
+,is_massmarket
+,is_msl_list
+,key_words
+,nr_pozwolenia
+,pkwiu
+,product_bk
+,product_id
+,product_is_valid
+,product_type
+,product_valid_from
+,product_valid_to
+,sap_id
+,sap_name
+,sku_name
+,sku_short_name
+,status
+,unit_of_measurement
+,units_volume
+,vat
+,product_source
+,cur_adress
+,cur_area_commercial
+,cur_area_education
+,cur_attributes
+,cur_behind_counter_exposition
+,cur_behind_glass_exposition
+,cur_chain_customer_account
+,cur_chain_type
+,cur_city
+,cur_commercial_segment
+,cur_contract
+,cur_customer_bk
+,cur_customer_change_timestamp
+,cur_customer_group
+,cur_customer_id
+,cur_customer_is_valid
+,cur_customer_lad
+,cur_customer_source
+,cur_customer_valid_from
+,cur_customer_valid_to
+,cur_dnv_commercial
+,cur_dnv_education
+,cur_education_segment
+,cur_email
+,cur_external_source
+,cur_group_owner
+,cur_group_type
+,cur_id_acres
+,cur_id_chain_customer
+,cur_id_customer
+,cur_id_esalesweb
+,cur_id_external_reporting
+,cur_id_farmaprom
+,cur_importance
+,cur_iqvia_brick
+,cur_is_dermatological
+,cur_is_kamsoft
+,cur_is_ordering
+,cur_is_self_service
+,cur_kamsoft_agreement
+,cur_last_visit_commercial
+,cur_last_visit_education
+,cur_name_chain_customer
+,cur_nip
+,cur_pharmacy_name
+,cur_pharmacy_status
+,cur_pharmacy_type
+,cur_phone_number
+,cur_position
+,cur_rep_id_commercial
+,cur_rep_id_education
+,cur_rep_name_commercial
+,cur_rep_name_education
+,cur_store_window
+,cur_zip_code
+,rep_email_commercial
+,rep_email_commercial_2
+,time_id
+,year
+,quarter
+,month
+,week_of_year
+,day_of_year
+,day_of_month
+,day_of_week
+,year_quarter
+,year_month
+,f_transaction_key
+,ETLLastModifiedDate
+from  emea_curated_disc_ceec.vw_f_transactions_user_view
+
+WHERE 
+
+--Condition 1
+(
+is_account_group_member('ch.daa.emea.businessanalyst.ceec.pl.rls') =true 
+and 
+(
+ rep_email_commercial  = current_user() OR  rep_email_commercial_2 = current_user()
+)
+)
+
+--Condition 2
+or 
+( 
+	(is_account_group_member('ch.daa.emea.businessanalyst.ceec.pl') =true
+  or is_account_group_member('ch.daa.emea.firefighter2ndCWID')  = true
+  or is_account_group_member('admins')  =true
+  )
+	and	
+	1=1
+	)
+)
