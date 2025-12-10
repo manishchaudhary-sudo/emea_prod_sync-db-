@@ -1,0 +1,36 @@
+CREATE TABLE chdaa_prd_lz_emea.emea_quality_int_ceec.fact_chain_uniwersalny (
+  document_id STRING,
+  kpi STRING,
+  kamsoft_program_id STRING,
+  r_product STRING,
+  kamsoft_program_name STRING,
+  sales_type STRING,
+  psdt_akt_synch DATE,
+  purchase_type STRING,
+  date_distributor_sales STRING,
+  sales_time STRING,
+  date_purchase DATE,
+  distributor STRING,
+  sell_in_volume_after_correction FLOAT,
+  horyzont STRING,
+  r_customer STRING,
+  expiry_date STRING,
+  r_batch STRING,
+  r_time DATE,
+  batch_number STRING,
+  volume FLOAT,
+  order_id STRING,
+  source STRING,
+  ETLIsDeleted BOOLEAN,
+  ETLLastModifiedDate TIMESTAMP,
+  ETLChecksum STRING,
+  ETLLineageID STRING)
+USING delta
+LOCATION 'abfss://quality@zpdatacoresadpemea.dfs.core.windows.net/integration/ceec/fact_chain_uniwersalny'
+TBLPROPERTIES (
+  'delta.deletedFileRetentionDuration' = 'interval 7 days',
+  'delta.enableDeletionVectors' = 'true',
+  'delta.feature.deletionVectors' = 'supported',
+  'delta.logRetentionDuration' = 'interval 7 days',
+  'delta.minReaderVersion' = '3',
+  'delta.minWriterVersion' = '7')
