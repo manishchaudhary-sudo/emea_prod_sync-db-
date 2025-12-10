@@ -1,0 +1,24 @@
+CREATE TABLE chdaa_prd_lz_emea.emea_raw_lnd_bnlx.fico_dim_partner_company_code (
+  PARTNER_COMPANY_CODE_SID BIGINT,
+  PARTNER_COMPANY_CODE_ID VARCHAR(4) COMMENT 'Company Code ID',
+  PARTNER_COMPANY_CODE VARCHAR(40) COMMENT 'Company Code',
+  PARTNER_COMPANY_ID VARCHAR(6) COMMENT 'Company ID',
+  PARTNER_COMPANY VARCHAR(40) COMMENT 'Company',
+  COUNTRY_ID VARCHAR(3) COMMENT 'Country ID',
+  PARTNER_COMPANY_CODE_CUR VARCHAR(3) COMMENT 'Company Code Currency',
+  PARTNER_COMPANY_CONS_UNIT_ID VARCHAR(18) COMMENT 'Company Consolidation Unit ID',
+  PARTNER_COMPANY_CONS_UNIT VARCHAR(60) COMMENT 'Company Consolidation Unit',
+  PARTNER_COMPANY_AB_STATUS_ID VARCHAR(1) COMMENT 'Company AB Status ID',
+  PARTNER_COMPANY_AB_STATUS VARCHAR(20) COMMENT 'Company AB Status',
+  PARTNER_COMPANY_SUPPLY_CHAIN_ROLE_ID VARCHAR(1) COMMENT 'Company Supply Chain Role ID',
+  PARTNER_COMPANY_SUPPLY_CHAIN_ROLE VARCHAR(40) COMMENT 'Company Supply Chain Role',
+  COUNTRY_GROUP_ID VARCHAR(32) COMMENT 'Country Group ID',
+  OPSYS VARCHAR(10) COMMENT 'OPSYS',
+  OPTIME VARCHAR(25) COMMENT 'OPTIME',
+  OPTYPE VARCHAR(1) COMMENT 'OPTYPE',
+  ETLLastModifiedDate DATE)
+USING delta
+LOCATION 'abfss://raw@zpdatacoresadpemea.dfs.core.windows.net/landing/bnlx/fico_dim_partner_company_code'
+TBLPROPERTIES (
+  'delta.minReaderVersion' = '1',
+  'delta.minWriterVersion' = '2')

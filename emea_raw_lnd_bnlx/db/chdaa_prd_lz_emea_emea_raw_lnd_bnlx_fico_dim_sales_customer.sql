@@ -1,0 +1,35 @@
+CREATE TABLE chdaa_prd_lz_emea.emea_raw_lnd_bnlx.fico_dim_sales_customer (
+  SALES_CUST_SID BIGINT,
+  SALES_CUST_ID VARCHAR(10) COMMENT 'Sales Customer ID',
+  SALES_CUST VARCHAR(40) COMMENT 'Sales Customer',
+  DIVISION_ID VARCHAR(2) COMMENT 'Division ID',
+  DIVISION VARCHAR(20) COMMENT 'Division',
+  DISTR_CHAN_ID VARCHAR(2) COMMENT 'Distribution Chain ID',
+  DISTR_CHAIN VARCHAR(20) COMMENT 'Distribution Chain',
+  SALES_ORG_ID VARCHAR(4) COMMENT 'Sales Organization ID',
+  SALES_ORG VARCHAR(60) COMMENT 'Sales Organization',
+  CUST_GRP_ID VARCHAR(2) COMMENT 'Customer Group ID',
+  CUST_GRP VARCHAR(20) COMMENT 'Customer Group',
+  CUST_GRP_HL_ID_01 VARCHAR(3) COMMENT 'Customer Group ID Hierarchy Level 1',
+  CUST_GRP_HL_ID_02 VARCHAR(3) COMMENT 'Customer Group ID Hierarchy Level 2',
+  CUST_GRP_HL_ID_03 VARCHAR(3) COMMENT 'Customer Group ID Hierarchy Level 3',
+  CUST_GRP_HL_ID_04 VARCHAR(3) COMMENT 'Customer Group ID Hierarchy Level 4',
+  CUST_GRP_HL_ID_05 VARCHAR(3) COMMENT 'Customer Group ID Hierarchy Level 5',
+  CUST_GRP_HL_01 VARCHAR(20) COMMENT 'Customer Group Hierarchy Level 1',
+  CUST_GRP_HL_02 VARCHAR(20) COMMENT 'Customer Group Hierarchy Level 2',
+  CUST_GRP_HL_03 VARCHAR(20) COMMENT 'Customer Group Hierarchy Level 3',
+  CUST_GRP_HL_04 VARCHAR(20) COMMENT 'Customer Group Hierarchy Level 4',
+  CUST_GRP_HL_05 VARCHAR(20) COMMENT 'Customer Group Hierarchy Level 5',
+  CUST_COUNTRY_CODE_ID VARCHAR(20) COMMENT 'Customer Country Specific Code ID',
+  CUST_COUNTRY_CODE VARCHAR(40) COMMENT 'Customer Country Specific Code',
+  PRICE_GROUP_ID VARCHAR(2) COMMENT 'Price Group ID',
+  PRICE_GROUP VARCHAR(20) COMMENT 'Price Group',
+  OPSYS VARCHAR(10) COMMENT 'OPSYS',
+  OPTIME VARCHAR(25) COMMENT 'OPTIME',
+  OPTYPE VARCHAR(1) COMMENT 'OPTYPE',
+  ETLLastModifiedDate DATE)
+USING delta
+LOCATION 'abfss://raw@zpdatacoresadpemea.dfs.core.windows.net/landing/bnlx/fico_dim_sales_customer'
+TBLPROPERTIES (
+  'delta.minReaderVersion' = '1',
+  'delta.minWriterVersion' = '2')

@@ -1,0 +1,36 @@
+CREATE TABLE chdaa_prd_lz_emea.emea_raw_lnd_bnlx.fico_dim_customer (
+  CUST_SID BIGINT,
+  CUST_ID VARCHAR(10) COMMENT 'Customer ID',
+  CUST VARCHAR(40) COMMENT 'Customer',
+  CUST_CH_ID_01 VARCHAR(2) COMMENT 'Customer Channel ID 1',
+  CUST_CH_ID_02 VARCHAR(2) COMMENT 'Customer Channel ID 2',
+  CUST_CH_01 VARCHAR(40) COMMENT 'Customer Channel 1',
+  CUST_CH_02 VARCHAR(40) COMMENT 'Customer Channel 2',
+  CUST_REGION_ID VARCHAR(3) COMMENT 'Customer Region ID',
+  CUST_REGION VARCHAR(20) COMMENT 'Customer Region',
+  CUST_LEAD_ID VARCHAR(10) COMMENT 'Customer Leading ID',
+  CUST_LEAD VARCHAR(40) COMMENT 'Customer Leading',
+  CUST_CLASS_ID VARCHAR(2) COMMENT 'Customer Classification ID',
+  CUST_CLASS VARCHAR(20) COMMENT 'Customer Classification',
+  CUST_DUNS_ID VARCHAR(9) COMMENT 'Customer DUNS Number ID',
+  CUST_DUNS VARCHAR(60) COMMENT 'Customer DUNS Number',
+  CUST_SORT VARCHAR(10) COMMENT 'Customer Sort Field',
+  CUST_INDUSTRY_ID VARCHAR(4) COMMENT 'Customer Industry ID',
+  CUST_INDUSTRY VARCHAR(20) COMMENT 'Customer Industry',
+  CUST_ACCNT_GRP_ID VARCHAR(4) COMMENT 'Customer Account Group ID',
+  CUST_ACCNT_GRP VARCHAR(40) COMMENT 'Customer Account Group',
+  CUST_COUNTRY VARCHAR(20) COMMENT 'Customer Country',
+  CUST_STREET VARCHAR(35) COMMENT 'Customer Street',
+  CUST_CITY VARCHAR(35) COMMENT 'Customer City',
+  CUST_POSTAL_CODE VARCHAR(10) COMMENT 'Customer Postal Code',
+  OPSYS VARCHAR(10) COMMENT 'OPSYS',
+  OPTIME VARCHAR(25) COMMENT 'OPTIME',
+  OPTYPE VARCHAR(1) COMMENT 'OPTYPE',
+  ETLLastModifiedDate DATE)
+USING delta
+LOCATION 'abfss://raw@zpdatacoresadpemea.dfs.core.windows.net/landing/bnlx/fico_dim_customer'
+TBLPROPERTIES (
+  'delta.enableDeletionVectors' = 'true',
+  'delta.feature.deletionVectors' = 'supported',
+  'delta.minReaderVersion' = '3',
+  'delta.minWriterVersion' = '7')
