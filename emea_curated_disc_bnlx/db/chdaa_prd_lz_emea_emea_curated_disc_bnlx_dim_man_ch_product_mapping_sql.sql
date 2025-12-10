@@ -1,0 +1,35 @@
+CREATE TABLE chdaa_prd_lz_emea.emea_curated_disc_bnlx.dim_man_ch_product_mapping_sql (
+  ETLIsDeleted BOOLEAN,
+  ETLLineageID STRING,
+  ETLLastModifiedDate TIMESTAMP,
+  ETLChecksum STRING,
+  dummy_measure BIGINT,
+  cnk_material_code STRING,
+  d_product_mapping_code STRING,
+  update_by STRING,
+  sub_brand STRING,
+  portfolio_management STRING,
+  extract_by STRING,
+  iri_material_name STRING,
+  status STRING,
+  brand_cluster STRING,
+  product_name STRING,
+  sap_material_name STRING,
+  main_sap_material_code STRING,
+  country_code STRING,
+  update_date DATE,
+  brand STRING,
+  sap_material_code STRING,
+  iri_ean_code STRING,
+  cnk_material_name STRING,
+  category STRING,
+  extract_date DATE)
+USING delta
+LOCATION 'abfss://curated@zpdatacoresadpemea.dfs.core.windows.net/discovery/bnlx/dim_man_ch_product_mapping_sql'
+TBLPROPERTIES (
+  'delta.deletedFileRetentionDuration' = 'interval 7 days',
+  'delta.enableDeletionVectors' = 'true',
+  'delta.feature.deletionVectors' = 'supported',
+  'delta.logRetentionDuration' = 'interval 7 days',
+  'delta.minReaderVersion' = '3',
+  'delta.minWriterVersion' = '7')
