@@ -1,0 +1,38 @@
+CREATE TABLE chdaa_prd_lz_emea.emea_curated_disc_ceec.f_tran_mark_user_view3 (
+  kpi STRING,
+  sku_name STRING,
+  sku_short_name STRING,
+  data_channel STRING,
+  year_quarter STRING,
+  market_category STRING,
+  value_rsp DECIMAL(18,2),
+  rep_email_commercial STRING,
+  rep_email_commercial_2 STRING,
+  status STRING,
+  is_msl_list STRING,
+  product_type STRING,
+  brand_group STRING,
+  pharmacy_type STRING,
+  market_brand STRING,
+  is_commercial STRING,
+  year_month STRING,
+  bloz7 STRING,
+  brand STRING,
+  fct_tool_name STRING,
+  is_contracted STRING,
+  contract STRING,
+  volume DECIMAL(18,2),
+  value DECIMAL(18,2),
+  category STRING,
+  ETLLastModifiedDate TIMESTAMP)
+USING delta
+LOCATION 'abfss://curated@zpdatacoresadpemea.dfs.core.windows.net/discovery/ceec/f_tran_mark_user_view3'
+TBLPROPERTIES (
+  'delta.checkpoint.writeStatsAsJson' = 'false',
+  'delta.checkpoint.writeStatsAsStruct' = 'true',
+  'delta.deletedFileRetentionDuration' = 'interval 7 days',
+  'delta.enableDeletionVectors' = 'true',
+  'delta.feature.deletionVectors' = 'supported',
+  'delta.logRetentionDuration' = 'interval 7 days',
+  'delta.minReaderVersion' = '3',
+  'delta.minWriterVersion' = '7')
