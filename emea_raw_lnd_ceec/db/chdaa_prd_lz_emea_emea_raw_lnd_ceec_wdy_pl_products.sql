@@ -1,0 +1,36 @@
+CREATE TABLE chdaa_prd_lz_emea.emea_raw_lnd_ceec.wdy_pl_products (
+  bloz7 INT,
+  ean BIGINT,
+  sap_id INT,
+  sku_name STRING,
+  sku_short_name STRING,
+  bazyl INT,
+  nr_pozwolenia STRING,
+  pkwiu STRING,
+  sap_name STRING,
+  status STRING,
+  brand_group STRING,
+  brand STRING,
+  is_commercial STRING,
+  is_massmarket STRING,
+  is_msl_list STRING,
+  is_contracted STRING,
+  category STRING,
+  fct_tool_name STRING,
+  product_type STRING,
+  attribute STRING,
+  active_substance_dosage STRING,
+  key_words STRING,
+  form STRING,
+  units_volume STRING,
+  unit_of_measurement STRING,
+  vat FLOAT,
+  exfactory_price FLOAT,
+  aktualnosc DATE)
+USING delta
+LOCATION 'abfss://raw@zpdatacoresadpemea.dfs.core.windows.net/landing/ceec/wdy_pl_products'
+TBLPROPERTIES (
+  'delta.enableDeletionVectors' = 'true',
+  'delta.feature.deletionVectors' = 'supported',
+  'delta.minReaderVersion' = '3',
+  'delta.minWriterVersion' = '7')

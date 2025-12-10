@@ -1,0 +1,37 @@
+CREATE TABLE chdaa_prd_lz_emea.emea_raw_lnd_ceec.esalesweb_account_organization (
+  irda_sys_is_deleted BOOLEAN,
+  irda_sys_deleted TIMESTAMP,
+  irda_sys_correlation_id STRING,
+  irda_sys_changed_by STRING,
+  account_id STRING,
+  irda_sys_object_guid STRING,
+  object_id DECIMAL(20,0),
+  irda_sys_country STRING,
+  irda_sys_updated TIMESTAMP,
+  status STRING,
+  userchanged TIMESTAMP,
+  irda_sys_touched TIMESTAMP,
+  is_member_start TIMESTAMP,
+  organization_id STRING,
+  createdby STRING,
+  sys_source_system STRING,
+  changedby STRING,
+  irda_sys_created TIMESTAMP,
+  client_variant_id DECIMAL(20,0),
+  irda_sys_is_dirty BOOLEAN,
+  is_member_end TIMESTAMP,
+  changed TIMESTAMP,
+  irda_sys_unique_key STRING,
+  deleted FLOAT,
+  created TIMESTAMP,
+  ETLIsDeleted BOOLEAN,
+  ETLLastModifiedDate TIMESTAMP,
+  ETLChecksum STRING,
+  ETLLineageID STRING)
+USING delta
+LOCATION 'abfss://raw@zpdatacoresadpemea.dfs.core.windows.net/landing/ceec/esalesweb_account_organization'
+TBLPROPERTIES (
+  'delta.deletedFileRetentionDuration' = 'interval 7 days',
+  'delta.logRetentionDuration' = 'interval 7 days',
+  'delta.minReaderVersion' = '1',
+  'delta.minWriterVersion' = '2')
